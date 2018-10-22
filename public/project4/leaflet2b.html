@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MWS | Leaflet2 | ILOSAURUS</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
+</head>
+<body>
+    <div class="container">
+        <div id='mapid' class="peta"></div>
+        <div class='gambar'>Gambar Disini</div>
+        <div class='review'>Tulis review disini</div>
+        <div class="footer">
+            <center>
+                <h3><a href="mailto:muhilhamsyarifuddin@gmail.com">Muhammad Ilham Syarifuddin</a></h3>
+            </center>
+        </div>
+    </div>
+</body>
+<script>
+            
+        var mymap = L.map('mapid').setView([-5.130262, 119.482400], 17);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <ahref="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 20,
+            id: 'mapbox.streets',
+            accessToken:'pk.eyJ1IjoiaWxvc2F1cnVzIiwiYSI6ImNqbWFtdWlsMTVnMWEzd29nZWR5ZmxlNjEifQ.t_PMiD_Tx4Dgm7fGddpguQ'
+        }).addTo(mymap);
+
+        var arr_marker= [
+            [-5.130340, 119.482719], //IT Center
+            [-5.128333, 119.483027], // TE
+            [-5.128632, 119.481064], // TS
+            [-5.129585, 119.481899], // Gedung AD
+            [-5.128863, 119.482104] //  Perpus
+        ];
+        
+        var loc = 
+        [
+            "Ruang IT Center", 
+            "Jurusan Teknik Elektro", 
+            "Jurusan Teknik Sipil", 
+            "Gedung Rektorat", 
+            "Habibie Library"
+        ];
+
+        var count = 0;
+        for (m of arr_marker) {
+            L.marker(m).addTo(mymap);
+            L.popup({autoClose:false}).setLatLng(m).setContent(loc[count]).openOn(mymap);
+            count++;
+        }
+        
+</script>
+</html>

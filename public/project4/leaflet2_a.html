@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MWS | Leaflet2 | ILOSAURUS</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
+</head>
+<body>
+    <div class="container">
+        <div id='mapid' class="peta"></div>
+        <div id="div_image" class='gambar'>
+            <img style="display:none" id="image" src="" alt="" srcset=""> 
+            Gambar
+        </div>
+        <div id="div_review" class="review">Tulis review disini</div>
+        <div class="footer">
+            <center>
+                <h3><a href="mailto:muhilhamsyarifuddin@gmail.com">Muhammad Ilham Syarifuddin</a></h3>
+            </center>
+        </div>
+    </div>
+</body>
+<script>
+            
+        var mymap = L.map('mapid').setView([-5.130262, 119.482400], 17);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <ahref="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 20,
+            id: 'mapbox.streets',
+            accessToken:'pk.eyJ1IjoiaWxvc2F1cnVzIiwiYSI6ImNqbWFtdWlsMTVnMWEzd29nZWR5ZmxlNjEifQ.t_PMiD_Tx4Dgm7fGddpguQ'
+        }).addTo(mymap);
+
+        var arr_marker= [
+            ["Ruang IT Center",  "-5.130340", "119.482719", "images/ruangitcenter.jpg","Review Ruang IT Center"], //IT Center
+            ["Jurusan Teknik Elektro", "-5.128333", "119.483027", "images/GDK.png","Review Jurusan Teknik Elektro"], // TE
+            ["Jurusan Teknik Sipil", "-5.128632", "119.481064", "images/GDK1.png","Review Jurusan Teknik Sipil"], // TS
+            ["Gedung Rektorat", "-5.129585", "119.481899", "images/rektorat.jpg","Review Gedung Rektorat"], // Gedung AD
+            ["Habibie Library", "-5.128863", "119.482104", "images/GDK1.png","Review Habibie Library"] //  Perpus
+        ];
+        
+        var loc = 
+        [
+            "Ruang IT Center", 
+            "Jurusan Teknik Elektro", 
+            "Jurusan Teknik Sipil", 
+            "Gedung Rektorat", 
+            "Habibie Library"
+        ];
+
+        //console.log(arr_marker);
+       // console.log(arr_marker[2][1]);
+        var count = 0;
+        
+        for (let m of arr_marker) {
+            var langlat = [m[1], m[2]];
+            testing = L.marker(langlat).addTo(mymap);
+            testing.on('click', function(e) {
+                img_url = m[3];
+                desc = m[4];
+                let image = document.getElementById('image');
+                let div_image = document.getElementById('div_image');
+                let review = document.getElementById('div_review');
+                review.innerHTML = desc;
+               // document.getElementById('review').innerHTML = "whatever";
+                div_image.innerHTML = "<img id='image' src='"+img_url+"'/>";
+               // image.display = "block";
+                //console.log(e);
+                console.log(m);
+               // let review = document.getElementById('review');
+               // review.innerHTML = nomer[4];
+              // var gambarUrl = nomer[3];
+               // let gambar = document.getElementById('gambar');
+               
+
+            });
+
+            //console.log(m[1],m[2]);
+           count++;
+
+        }
+
+        //function onMapClick(e) {
+               // popup.setLatLng(e.latlng).setContent("Lokasi yang dipilih: " + e.latlng.toString()).openOn(mymap);
+        //        console.log("Peta diklik pada posisi " + e.latlng);
+        //    }
+       // mymap.on('click', onMapClick);
+        
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)http://udacity.github.io/responsive-images/examples/1-08/imageRelativeWidth/index-quiz.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style"></style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="udacity-grader" content="tests.json" unit-tests="tests.js">
+  <!--<base target="_blank">--><base href="." target="_blank">
+  <title>Udacity RI: relative width</title>
+
+  <link rel="icon" sizes="192x192" href="http://udacity.github.io/responsive-images/images/icon.png">
+
+  <style>body {
+  margin: 0;
+}
+img {
+  float: left;
+  margin-right:10px;
+  width: calc((100% - 20px)/3);
+}
+img:last-of-type {
+  margin-right: 0;
+}
+
+</style>
+
+<link rel="import" href="chrome-extension://melpgahbngpgnbhhccnopmlmpbmdaeoi/app/templates/feedback.html" id="udacity-test-widget"><script id="ud-grader-options">UdacityFEGradingEngine.turnOn();</script></head>
+
+<body>
+  <img id="img1" src="./Udacity_RI_ relative_width_files/balham.jpg" alt="Balham High Road and a rainbow">
+  <img id="img2" src="./Udacity_RI_ relative_width_files/balham.jpg" alt="Balham High Road and a rainbow">
+  <img id="img3" src="./Udacity_RI_ relative_width_files/balham.jpg" alt="Balham High Road and a rainbow">
+  <script async="" src="./Udacity_RI_ relative_width_files/analytics.js"></script><script src="./Udacity_RI_ relative_width_files/ga.js"></script>
+
+
+
+
+<script src="chrome-extension://melpgahbngpgnbhhccnopmlmpbmdaeoi/app/js/libs/GE.js" id="udacity-front-end-feedback"></script><script id="ud-39533039">UdacityFEGradingEngine.registerSuites("[{\n  \"name\": \"calc() Quiz\",\n  \"code\": \"myrelativesarewide\",\n  \"tests\": [\n    {\n      \"description\": \"There are three images\",\n      \"definition\": {\n        \"nodes\": \"img\",\n        \"get\": \"count\",\n        \"equals\": 3\n      }\n    },\n    {\n      \"description\": \"There are 10px between #img1 and #img2\",\n      \"definition\": {\n        \"waitForEvent\": \"ud-btwn-1-2\",\n        \"exists\": true\n      }\n    },\n    {\n      \"description\": \"There are 10px between #img2 and #img3\",\n      \"definition\": {\n        \"waitForEvent\": \"ud-btwn-2-3\",\n        \"exists\": true\n      }\n    },\n    {\n      \"description\": \"Left image is flush against viewport\",\n      \"definition\": {\n        \"nodes\": \"#img1\",\n        \"absolutePosition\": \"left\",\n        \"equals\": 0\n      }\n    },\n    {\n      \"description\": \"Right image is flush against viewport\",\n      \"definition\": {\n        \"nodes\": \"#img3\",\n        \"absolutePosition\": \"right\",\n        \"equals\": \"max\"\n      }\n    }\n  ]\n}]");</script><test-widget></test-widget><script src="./Udacity_RI_ relative_width_files/tests.js" id="ud-96207310"></script></body></html>

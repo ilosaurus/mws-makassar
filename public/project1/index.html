@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapbox</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
+    <style>
+            #mapid { height: 400px;  }
+    </style>
+
+</head>
+<body>
+    <div id='mapid'></div>
+    <script>
+            
+            var mymap = L.map('mapid').setView([-5.130340, 119.482719], 43);
+            var marker = L.marker([-5.130340, 119.482719]).addTo(mymap);
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox.streets',
+                accessToken: 'pk.eyJ1IjoiaWxvc2F1cnVzIiwiYSI6ImNqbWFtdWlsMTVnMWEzd29nZWR5ZmxlNjEifQ.t_PMiD_Tx4Dgm7fGddpguQ'
+            }).addTo(mymap);
+            var circle = L.circle([-5.130340, 119.482719], {
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.5,
+                radius: 20
+            }).addTo(mymap);
+            var polygon = L.polygon([
+                [-5.130356, 119.482384],
+                [-5.129814, 119.482762],
+                [-5.130299, 119.482893]
+            ]).addTo(mymap);
+            marker.bindPopup("<b>Our Second Home Marker</b><br>Ruang IT Center PNUP").openPopup();
+            circle.bindPopup("I am a circle.");
+            polygon.bindPopup("I am a polygon.");
+            var popup = L.popup();
+            function onMapClick(e) {
+                popup.setLatLng(e.latlng).setContent("Lokasi yang dipilih: " + e.latlng.toString()).openOn(mymap);
+                console.log("Peta diklik pada posisi " + e.latlng);
+            }
+            mymap.on('click', onMapClick);
+            
+    </script>
+</body>
+</html>

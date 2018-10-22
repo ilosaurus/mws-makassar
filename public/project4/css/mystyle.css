@@ -1,0 +1,67 @@
+html, body, #mapid {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-gap: 4px;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: 50% 44% 6%;
+}
+
+.peta {
+    grid-column: 1/-1;
+}
+
+.gambar {
+    color: white;
+    font-size: 15pt;
+    background: #3498db;
+    grid-column: 1/5;
+}
+
+
+
+.gambar img {
+   
+    text-align: center;
+    /* max-width: 700px; */
+    width: 100%;
+    max-height: 100%;
+}
+    
+.review {
+    color: white;
+    font-size: 15pt;
+    background:#3498db;
+    grid-column: 5/-1;
+}
+
+.footer {
+    background:#3498db;    
+    grid-column: 1/-1;
+    grid-row : 3/3;
+}
+
+.footer h3 {
+    text-decoration: none;
+    display: block;
+    margin: auto;
+}
+
+.footer h3 a {
+    color: white;
+    font-size: 15pt;
+}
+
+a:link {
+    text-decoration: none;
+}
