@@ -1,0 +1,35 @@
+{
+    "places":
+    [
+        {
+            "lokasi"    :[-5.130340, 119.482719],
+            "sponsor"   :"Ruang IT Center Politeknik Negeri Ujung Pandang",
+            "gambar"    :"../assets/project4/images/ruangitcenter.jpg",
+            "review"    :"Review Ruang IT Center"
+        },
+        {
+            "lokasi"    :[-5.128333, 119.483027],
+            "sponsor"   :"Jurusan Teknik Elektro Politeknik Negeri Ujung Pandang",
+            "gambar"    :"../assets/project4/images/elektro.jpg",
+            "review"    :"Review Jurusan Teknik Elektro Politeknik Negeri Ujung Pandang"
+        },
+        {
+            "lokasi"    :[-5.128632, 119.481064],
+            "sponsor"   :"Jurusan Teknik Sipil Politeknik Negeri Ujung Pandang",
+            "gambar"    :"../assets/project4/images/sipil.jpg",
+            "review"    :"Review Jurusan Teknik Sipil Politeknik Negeri Ujung Pandang"
+        },
+        {
+            "lokasi"    :[-5.129585, 119.481899],
+            "sponsor"   :"Gedung Rektorat Politeknik Negeri Ujung Pandang",
+            "gambar"    :"../assets/project4/images/rektorat.jpg",
+            "review"    :"Review Gedung Rektorat Politeknik Negeri Ujung Pandang"
+        },
+        {
+            "lokasi"    :[-5.128863, 119.482104],
+            "sponsor"   :"Perpustakaan B.J Habibie Politeknik Negeri Ujung Pandang",
+            "gambar"    :"../assets/project4/images/library.jpg",
+            "review"    :"Review Perpustakaan B.J Habibie Politeknik Negeri Ujung Pandang"
+        }
+    ]
+}
