@@ -1,0 +1,33 @@
+[debug] [2018-10-31T15:30:42.456Z] ----------------------------------------------------------------------
+[debug] [2018-10-31T15:30:42.462Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-10-31T15:30:42.462Z] CLI Version:   4.2.1
+[debug] [2018-10-31T15:30:42.462Z] Platform:      linux
+[debug] [2018-10-31T15:30:42.462Z] Node Version:  v8.10.0
+[debug] [2018-10-31T15:30:42.462Z] Time:          Wed Oct 31 2018 23:30:42 GMT+0800 (WITA)
+[debug] [2018-10-31T15:30:42.462Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-31T15:30:42.540Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-31T15:30:42.540Z] > authorizing via signed-in user
+[debug] [2018-10-31T15:30:42.543Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-31T15:30:42.544Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-31T15:30:42.858Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-31T15:30:42.900Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/mwapwa-75e0b  
+ 
+[debug] [2018-10-31T15:30:44.009Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'mwapwa-75e0b'...
+[info] 
+[info] i  deploying hosting
+[debug] [2018-10-31T15:30:44.016Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/mwapwa-75e0b/versions  
+
+[debug] [2018-10-31T15:30:46.566Z] <<< HTTP RESPONSE 200
+[info] i  hosting[mwapwa-75e0b]: beginning deploy...
+[info] i  hosting[mwapwa-75e0b]: found 35 files in public
+[debug] [2018-10-31T15:30:46.621Z] [hosting] hash cache [cHVibGlj] stored for 35 files
+[debug] [2018-10-31T15:30:46.621Z] [hosting][hash queue][FINAL]
+[debug] [2018-10-31T15:30:46.621Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/mwapwa-75e0b/versions/fe5c9001bc9a0c25:populateFiles  
+ <request body omitted>
+[debug] [2018-10-31T15:30:48.460Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-31T15:30:48.470Z] [hosting][populate queue][FINAL]
+[debug] [2018-10-31T15:30:48.470Z] [hosting] uploads queued: 3
